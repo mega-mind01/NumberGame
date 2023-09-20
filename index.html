@@ -25,6 +25,8 @@
 
             if (guessinput == rdmNum) {
                 print.innerHTML = `Bravo!, You have guessed correctly in ${count} trials`;
+            } else if (guessinput > 100) {
+                print.innerHTML = `You have to guess between 1 - 100`;
             } else if (guessinput > rdmNum) {
                 print.innerHTML = "Your guess is higher than the number";
             } else {
