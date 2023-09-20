@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Game</title>
+</head>
+<body>
+    <h1>Guess the Number Game</h1>
+    
+    <p>Guess a number between 1 and 100:</p>
+    <input type="number" id="guess-input">
+    <button onclick="checkGuess()">Submit Guess</button>
+    
+    <p id="message"></p>
+
+    <script>
+        let print = document.getElementById("message");
+        let rdmNum = Math.floor(Math.random() * 100) + 1;
+        let count = 1;
+
+        function checkGuess() {
+            let guessinput = parseInt(document.getElementById("guess-input").value);
+            count++;
+
+            if (guessinput == rdmNum) {
+                print.innerHTML = `Bravo!, You have guessed correctly in ${count} trials`;
+            } else if (guessinput > rdmNum) {
+                print.innerHTML = "Your guess is higher than the number";
+            } else {
+                print.innerHTML = "Your guess is lower than the number";
+            }
+        }
+    </script>
+</body>
+</html>
